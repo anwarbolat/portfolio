@@ -1,0 +1,123 @@
+.sphere-wrapper {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-end;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 800px;
+    height: 800px;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.sphere {
+    transform-style: preserve-3d;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    animation: rotate3d 72s linear infinite;
+    transform-origin: center center;
+}
+
+.plane {
+    position: absolute;
+    transform-style: preserve-3d;
+    inset: 0;
+}
+
+.spoke {
+    transform-origin: 0 0;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 400px;
+    width: 0;
+}
+
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: -4px;
+    top: 100%;
+    transform: rotateX(90deg);
+    opacity: 0.8;
+    filter: blur(0.5px);
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    25% {
+        transform: rotate3d(1, 1, 1, 90deg);
+    }
+    50% {
+        transform: rotate3d(1, 1, 1, 180deg);
+    }
+    75% {
+        transform: rotate3d(1, 1, 1, 270deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: rotateX(90deg) scale(0.3) translateZ(20px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: rotateX(90deg) scale(1) translateZ(0);
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 1440px) {
+    .sphere-wrapper {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .sphere {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .spoke {
+        height: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sphere-wrapper {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .sphere {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .spoke {
+        height: 200px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        left: -3px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sphere-wrapper {
+        display: none;
+    }
+}
