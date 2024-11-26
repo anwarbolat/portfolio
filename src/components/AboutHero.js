@@ -15,10 +15,10 @@ export default function AboutHero() {
           >
             <h1 className="heading-1 mb-6">About Me</h1>
             <p className="text-xl text-dimWhite mb-6">
-              Hi, I'm Anwar Bolat, an Interaction and Visual Designer based in the United Kingdom. With an MSc in Human-Computer Interaction and a focus on AI, I combine design expertise with data-driven insights to create exceptional user experiences.
+              Hi, I'm Anwar Bolat, an Interaction and Visual Designer based in the United Kingdom. With an MSc in Human-Computer Interaction (HCI) and certifications from NN/g and UXQB, I combine design expertise with data-driven approach to create exceptional user experiences.
             </p>
             <p className="text-xl text-dimWhite mb-6">
-              As a Senior UX Designer at Sage, I continuously improve user experiences through research and usability testing. My expertise spans across SaaS, eCommerce, and Mobile interfaces, using technologies like React, JavaScript, Next.js, Flutter, and Python.
+              As a Senior UX Designer at Sage, I continuously improve user experiences through user research and usability testing. My expertise spans across Cloud SaaS, eCommerce, Mobile and interfaces with integrated AI capabilities. I also have a strong background in front-end development, using technologies like React, Next.js, Flutter, and proficient in UI design and animation. I have experience working with a wide range of design tools such as Figma, Illustrator, AfterEffects, Photoshop, and more.
             </p>
           </motion.div>
 

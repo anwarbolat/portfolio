@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ThreeJSHero from './ThreeJSHero';
-import AnimatedSphere from './AnimatedSphere';
 import { useEffect, useRef } from 'react';
 import styles from '../../styles/TextReveal.module.css';
 
@@ -121,7 +120,15 @@ const RevealText = ({ text, id }) => {
   );
 };
 
-const Hero = () => {
+const getGreeting = () => {
+  const hour = new Date().getHours();
+  if (hour < 5) return "Hi, night owl 🌙";
+  if (hour < 12) return "Good morning ☀️";
+  if (hour < 18) return "Good afternoon 🌤️";
+  return "Good evening 🌆";
+};
+
+export default function Hero() {
   const introText = 'I create meaningful digital experiences through thoughtful interface design and user-centered solutions, focusing on both aesthetics and functionality.';
   
   return (
@@ -129,8 +136,7 @@ const Hero = () => {
       <ThreeJSHero />
       <div className="container mx-auto px-4 relative">
         <h1 className="heading-1 mt-48 mb-6 leading-tight text-left">
-          Hi, I'm{' '}
-          <span className="text-primary">Anwar Bolat</span>
+          <span>{getGreeting()}</span>, I'm <span className="text-primary">Anwar Bolat</span>
         </h1>
         <div className="w-full text-left relative" style={{ height: '100vh' }}>
           <RevealText text={introText} />
@@ -168,5 +174,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
