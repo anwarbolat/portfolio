@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   margin-bottom: 4rem;
-  font-size: clamp(2.5rem, 5vw, 25rem);
+  font-size: clamp(2.85rem, 4.5vw, 24rem);
   line-height: 1.25;
   font-weight: 300;
   color: var(--text-primary);
@@ -15,8 +15,8 @@
 }
 
 .revealText span {
-  opacity: 0.001;
-  transition: opacity 0.5s ease-out;
+  opacity: 0.01;
+  transition: opacity 1s linear;
   display: inline-block;
   will-change: opacity;
   transform: translateZ(0);
@@ -33,17 +33,9 @@
 }
 
 .revealText span.visible {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 #bottom {
   margin-bottom: 100vh;
-}
-
-.heading {
-  font-size: clamp(2rem, 4vw, 20rem);
-  margin-bottom: 2rem;
-  font-weight: 500;
-  line-height: 1.25;
-  text-align: left;
 }
