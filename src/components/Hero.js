@@ -1,12 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ThreeJSHero from './ThreeJSHero';
 import { useEffect, useRef } from 'react';
 import styles from '../../styles/TextReveal.module.css';
 
-const RevealText = ({ text, id }) => {
+const RevealText = ({ text }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -114,7 +113,7 @@ const RevealText = ({ text, id }) => {
   };
 
   return (
-    <p ref={containerRef} className={styles.revealText} id={id}>
+    <p ref={containerRef} className={styles.revealText}>
       {renderText()}
     </p>
   );
@@ -124,7 +123,7 @@ const getGreeting = () => {
   const hour = new Date().getHours();
   if (hour < 5) return "Hi, night owl";
   if (hour < 12) return "Morning";
-  if (hour < 18) return "Good day";
+  if (hour < 18) return "Hi";
   return "Evening";
 };
 
@@ -137,28 +136,16 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative">
         <div className="mt-24 sm:mt-48">
           <h1 className="heading-2 mb-6 leading-tight text-left">
-            <span>{getGreeting()}</span>, my name is Anwar Bolat
+            <span>{getGreeting()}</span>, my name is Anwar
           </h1>
           <div className="w-full text-left relative" style={{ height: '80vh' }}>
             <RevealText text={introText} />
             <RevealText text={introText} />
             <RevealText text={introText} />
+            <RevealText text={introText} />
+            <RevealText text={introText} />
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
-            <Link
-              href="/portfolio"
-              className="btn-primary text-lg px-8 py-3 rounded-lg inline-block"
-            >
-              View Portfolio
-            </Link>
-            <Link
-              href="/about"
-              className="btn-secondary text-lg px-8 py-3 rounded-lg inline-block"
-            >
-              About Me
-            </Link>
-          </div>
       </div>
     </section>
   );

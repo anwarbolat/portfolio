@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   margin-bottom: 4rem;
-  font-size: clamp(2.85rem, 4.5vw, 24rem);
-  line-height: 1.25;
+  font-size: clamp(2.85rem, 5vw, 24rem);
+  line-height: 1.5;
   font-weight: 300;
   color: var(--text-primary);
   text-align: left;
@@ -30,12 +30,4 @@
 
 .revealText .word:last-child {
   margin-right: 0;
-}
-
-.revealText span.visible {
-  opacity: 0.5;
-}
-
-#bottom {
-  margin-bottom: 100vh;
 }
