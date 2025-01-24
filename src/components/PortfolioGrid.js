@@ -6,72 +6,78 @@ import Image from 'next/image';
 
 const projects = [
   {
-    id: 'sage-design-system',
-    title: 'Sage Design System',
-    description: 'Enterprise-scale design system for Sage\'s global product suite',
-    image: '/images/portfolio/sage-ds.jpg'
+    id: 'sage-smart-transactions',
+    title: 'Sage Smart Transactions',
+    description: 'Transaction service that extracts data from uploaded invoices',
+    image: '/images/1.jpg'
   },
   {
-    id: 'sage-mobile',
-    title: 'Sage Mobile App',
-    description: 'Cross-platform mobile application for business accounting',
-    image: '/images/portfolio/sage-mobile.jpg'
-  },
-  {
-    id: 'kaplan-platform',
-    title: 'Kaplan Learning Platform',
-    description: 'Educational platform redesign improving student engagement',
-    image: '/images/portfolio/kaplan.jpg'
+    id: 'thg-fraud-detection',
+    title: 'Fraud Detection Platform',
+    description: 'Anti-fraud solution for e-Commerce businesses',
+    image: '/images/fraud-detection-thumb-img.png'
   },
   {
     id: 'thg-checkout',
     title: 'THG Checkout Experience',
-    description: 'Optimized e-commerce checkout increasing conversion by 23%',
-    image: '/images/portfolio/thg.jpg'
+    description: 'Optimised for e-Commerce checkout software as a service',
+    image: '/images/checkout-thumb-img.png'
   },
   {
-    id: 'ao-mobile',
-    title: 'AO Mobile App',
-    description: 'Award-winning retail mobile app with AR features',
-    image: '/images/portfolio/ao.jpg'
+    id: 'mystock-platform',
+    title: 'MyStock Trading Platform',
+    description: 'No-code algorithmic trading platform for investors',
+    image: '/images/mystock-thumb-img.png'
+  },
+  {
+    id: 'ao-contact-us',
+    title: 'AO Contact Us',
+    description: 'Reducing e-Commerce business expences with AI automation',
+    image: '/images/chatbot-thumb-img.png'
+  },
+  {
+    id: 'ao-my-account',
+    title: 'AO My Account',
+    description: 'Mobile-first my account solution for e-Commerce',
+    image: '/images/myaccount-thumb-img.png'
   },
   {
     id: 'growfox-saas',
     title: 'Growfox SaaS Platform',
     description: 'B2B SaaS platform for marketing automation',
-    image: '/images/portfolio/growfox.jpg'
+    image: '/images/growfox.jpg'
   },
   {
     id: 'sage-ai',
     title: 'Sage AI Assistant',
     description: 'AI-powered financial assistant for small businesses',
-    image: '/images/portfolio/sage-ai.jpg'
+    image: '/images/sage-ai.jpg'
   },
   {
     id: 'ao-checkout',
     title: 'AO Checkout Redesign',
     description: 'Streamlined checkout process reducing cart abandonment',
-    image: '/images/portfolio/ao-checkout.jpg'
+    image: '/images/ao-checkout.jpg'
   }
 ];
 
 const PortfolioGrid = () => {
   return (
-    <section className="py-20">
+    <section className="py-28">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
           <h2 className="heading-2 mb-6">Selected Work</h2>
-          <p className="text-xl text-dimWhite max-w-3xl mx-auto">
+          <p className="text-xl text-dimWhite max-w-3xl">
             A collection of projects showcasing my expertise in interaction design, user experience, and digital innovation.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

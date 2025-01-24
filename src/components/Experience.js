@@ -41,7 +41,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="py-20 bg-white/5 relative overflow-hidden">
+    <section className="py-28 bg-white/5 relative overflow-hidden">
       {/* AnimatedSphere positioned as background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
         <AnimatedSphere />

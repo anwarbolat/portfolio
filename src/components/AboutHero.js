@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function AboutHero() {
   return (
-    <section className="py-20 relative">
+    <section className="py-28 relative">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div

@@ -5,7 +5,7 @@ import ParallaxImageStack from './ParallaxImageStack';
 
 export default function CallToAction() {
   return (
-    <section className="py-20 sm:py-32 bg-[#3b265b] overflow-hidden">
+    <section className="py-28 sm:py-32 overflow-hidden bg-white/5">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start min-h-[600px]">
           {/* Left column – Content */}
