@@ -937,8 +937,7 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .work-card { display: block; position: relative; }
 .work-card-image { transition: transform 400ms ease; }
 .work-card:hover .work-card-image, .work-card:focus-visible .work-card-image { transform: scale(1.025); }
-.work-card-label { position: absolute; inset: auto 0 0; padding: 56px 24px 24px; background: linear-gradient(transparent, #0c0626ee); color: white; font-size: 1.2rem; font-weight: 500; opacity: 0; transform: translateY(8px); transition: opacity 180ms, transform 180ms; }
-.work-card:hover .work-card-label, .work-card:focus-visible .work-card-label { opacity: 1; transform: none; }
+.work-card-label { position: absolute; inset: auto 0 0; padding: 56px 24px 24px; background: linear-gradient(transparent, #0c0626ee); color: white; font-size: 1.2rem; font-weight: 500; opacity: 1; }
 .article-title, .article-text-group, .next-project-content, .about-column { min-width: 0; }
 .article-img { height: auto; }
 .next-project-link:hover .button-text { color: #f0a2e5; }
@@ -951,7 +950,7 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
   .hero { max-width: 100%; padding-block: 88px; }
   .hero-credentials { font-size: .875rem; }
   .work-card { height: auto; aspect-ratio: 4 / 3; }
-  .work-card-label { opacity: 1; transform: none; font-size: 1rem; padding: 48px 16px 16px; }
+  .work-card-label { font-size: 1rem; padding: 48px 16px 16px; }
   .work-cards-wrap { gap: 20px; margin-bottom: 64px; }
   .next-wrap { margin-block: 72px; padding-inline: 0; }
   .split-1-to-1, .split-1-to-3 { grid-template-columns: 1fr; grid-auto-flow: row; }
@@ -1003,7 +1002,6 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .cursors p { position: absolute; top: -8px; left: 40px; width: min(400px, calc(100vw - 56px)); margin: 0; font-size: 32px; font-weight: 500; line-height: 1.2; color: #fff; opacity: 0; transition: opacity .5s; }
 .cursors p.visible { opacity: 1; }
 .cursors.label-above p { top: auto; bottom: 24px; }
-.has-cursor-trail .work-card:hover:not(:focus-visible) .work-card-label { opacity: 0; }
 @media (hover: hover) and (pointer: fine) {
   .nav-menu:has(.nav-link:hover) .nav-link:not(:hover) { opacity: .5; }
   .footer-content > .split-1-to-1:has(.footer-link:hover) .footer-link:not(:hover) { opacity: .5; }

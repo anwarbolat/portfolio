@@ -65,7 +65,6 @@
     cursor.hidden = true;
     message.classList.remove('visible');
     hoveredImage = null;
-    document.documentElement.classList.remove('has-cursor-trail');
   }
   function syncCursor() {
     enabled = finePointer.matches && !reducedMotion.matches && !document.hidden;
@@ -104,7 +103,6 @@
     if (cursor.hidden) {
       positions.forEach(position => { position.x = aimX; position.y = aimY; });
       cursor.hidden = false;
-      document.documentElement.classList.add('has-cursor-trail');
     }
     updateMessage(event.target);
     placeMessage();
