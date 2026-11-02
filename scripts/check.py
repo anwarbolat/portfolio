@@ -3,6 +3,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
+import json
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -50,6 +51,11 @@ for path, page in parsed.items():
     if page.headings != 1 or page.main != 1 or not page.title or not page.description:
         errors.append(f'{label}: expected one h1/main, title and description')
     source = path.read_text()
+    for data in re.findall(r'<script\s+type="application/ld\+json"[^>]*>(.*?)</script>', source, re.S):
+        try:
+            json.loads(data)
+        except json.JSONDecodeError as error:
+            errors.append(f'{label}: invalid JSON-LD: {error}')
     if re.search(r'webflow|website-files|jquery|fonts\.googleapis|data-w-', source, re.I):
         errors.append(f'{label}: external platform dependency remains')
     for link in page.links:

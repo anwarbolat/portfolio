@@ -931,8 +931,6 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .hero { z-index: 1; }
 .hero-heading { line-height: 1.2; }
 .hero-credentials { color: var(--light-steel-blue); margin-top: 20px; font-size: 1rem; }
-.hero-sphere { position: absolute; width: min(48%, 560px); aspect-ratio: 1; right: 0; top: 50%; transform: translateY(-50%); z-index: 0; pointer-events: none; }
-.hero-sphere canvas { display: block; width: 100%; height: 100%; }
 .work-card { display: block; position: relative; }
 .work-card-image { transition: transform 400ms ease; }
 .work-card:hover .work-card-image, .work-card:focus-visible .work-card-image { transform: scale(1.025); }
@@ -941,14 +939,13 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .article-title, .article-text-group, .next-project-content, .about-column { min-width: 0; }
 .article-img { height: auto; }
 .article-text-group a, .text-link, .link_small { text-decoration: underline; text-underline-offset: 4px; }
-.footer-link:hover, .next-project-link:hover .button-text { color: #f0a2e5; }
-.footer-link { min-height: 48px; }
+.next-project-link:hover .button-text { color: #f0a2e5; }
+.footer-link { min-height: 48px; opacity: 1; transition: opacity .25s ease-out; }
+.footer-content > .split-1-to-1:has(.footer-link:focus-visible) .footer-link:not(:focus-visible) { opacity: .5; }
 .next-wrap { margin-inline: auto; }
 .about-heading h1 { font-size: 1.4rem; margin-bottom: 0; }
 @media (min-width: 992px) { .about-column { flex-direction: column; } }
-@media (max-width: 991px) { .hero-sphere { right: -30px; width: 44%; opacity: .65; } }
 @media (max-width: 767px) {
-  .hero-sphere { opacity: .3; width: 52%; right: -20px; }
   .hero-heading { font-size: clamp(1.65rem, 6.1vw, 2.8rem); }
   .hero { max-width: 100%; padding-block: 88px; }
   .hero-credentials { font-size: .875rem; }
@@ -968,10 +965,60 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
   .navbar { flex-direction: row; gap: 12px; }
   .nav-logo { width: 52px; flex-shrink: 0; }
   .nav-link { padding-inline: 10px; font-size: .9375rem; }
-  .hero-sphere { width: 65%; }
   .footer-content .split-1-to-1 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Original homepage motion, with static fallbacks and one accessible heading. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.hero-text { --hero-font-size: 4rem; --hero-line-height: 76px; }
+.hero-text .hero-heading { font-size: var(--hero-font-size); line-height: var(--hero-line-height); }
+.hero-animation-wrap { display: block; height: var(--hero-line-height); overflow: hidden; }
+.hero-animated .hero-heading { height: var(--hero-line-height); white-space: nowrap; }
+.motion-ready .hero-animated { animation: hero-titles 12s ease-in-out infinite; }
+.motion-ready .hero-credentials { display: none; }
+@keyframes hero-titles {
+  0%, 22% { transform: translateY(0); }
+  27%, 49% { transform: translateY(-25%); }
+  54%, 76% { transform: translateY(-50%); }
+  81%, 100% { transform: translateY(-75%); }
+}
+.hero-shpere-wrapper { position: absolute; inset: auto 0 0 auto; z-index: -1; display: flex; align-items: center; justify-content: center; width: 600px; max-width: 100%; height: 280px; pointer-events: none; }
+.sphere-wrapper { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; perspective: 400px; }
+.sphere { position: relative; width: 280px; height: 280px; flex-shrink: 0; transform-style: preserve-3d; transform: rotate3d(1, 1, 1, 35deg); }
+.motion-ready .sphere { animation: rotate3d 72s linear infinite; }
+.plane { position: absolute; inset: 0; transform-style: preserve-3d; }
+.spoke { position: absolute; left: 50%; top: 50%; width: 0; height: 280px; transform-origin: 0 0; transform-style: preserve-3d; }
+.dot { position: absolute; left: -4px; top: 100%; width: 8px; height: 8px; border-radius: 50%; transform: rotateX(90deg); }
+.motion-ready .dot { animation: pulsate 1.5s infinite alternate both; }
+.motion-paused .hero-animated, .motion-paused .sphere, .motion-paused .dot { animation-play-state: paused; }
+@keyframes rotate3d { from { transform: rotate3d(1, 1, 1, 0deg); } to { transform: rotate3d(1, 1, 1, 360deg); } }
+@keyframes pulsate { from { transform: rotateX(90deg) scale(.3) translateZ(20px); } to { transform: rotateX(90deg) scale(1) translateZ(0); } }
+
+.cursors { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+.cursors[hidden] { display: none; }
+.cursors > div { position: absolute; top: 0; left: 0; width: 24px; height: 24px; border-radius: 50%; background: hsl(309 69% 60% / .3); transform: translate(-50%, -50%); will-change: transform; }
+.cursors p { position: absolute; top: -8px; left: 40px; width: min(400px, calc(100vw - 56px)); margin: 0; font-size: 32px; font-weight: 500; line-height: 1.2; color: #fff; opacity: 0; transition: opacity .5s; }
+.cursors p.visible { opacity: 1; }
+.cursors.label-left p { left: auto; right: 40px; }
+.cursors.label-above p { top: auto; bottom: 24px; }
+.has-cursor-trail .work-card:hover:not(:focus-visible) .work-card-label { opacity: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .footer-content > .split-1-to-1:has(.footer-link:hover) .footer-link:not(:hover) { opacity: .5; }
+}
+@media (max-width: 991px) {
+  .hero-text { --hero-font-size: 3.2rem; --hero-line-height: 62px; }
+  .hero-shpere-wrapper { width: 320px; opacity: .65; }
+  .sphere-wrapper { transform: scale(.8); }
+}
+@media (max-width: 767px) {
+  .hero-text { --hero-font-size: clamp(1.65rem, 6.1vw, 2.8rem); --hero-line-height: clamp(34px, 7.5vw, 54px); }
+  .hero-shpere-wrapper { width: 240px; height: 240px; opacity: .3; }
+  .sphere-wrapper { transform: scale(.6); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .motion-ready .hero-credentials { display: block; }
+  .hero-animated { transform: none; }
+  .cursors { display: none; }
 }

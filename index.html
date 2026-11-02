@@ -15,11 +15,51 @@
     <link href="./assets/images/dda9bd03-bolatov--favicon.png" rel="icon" type="image/png">
     <link href="./assets/images/854660b8-bolatov--webclip.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="./assets/site.css">
-    <link rel="canonical" href="https://anwarbolat.github.io/portfolio/">
-    <meta property="og:image" content="https://anwarbolat.github.io/portfolio/assets/images/131114f6-sage_illustration_x2.webp">
-    <meta name="twitter:image" content="https://anwarbolat.github.io/portfolio/assets/images/131114f6-sage_illustration_x2.webp">
-    <meta property="og:url" content="https://anwarbolat.github.io/portfolio/">
+    <link rel="canonical" href="https://www.bolatov.com/">
+    <meta property="og:image" content="https://www.bolatov.com/assets/images/131114f6-sage_illustration_x2.webp">
+    <meta name="twitter:image" content="https://www.bolatov.com/assets/images/131114f6-sage_illustration_x2.webp">
+    <meta property="og:url" content="https://www.bolatov.com/">
     <meta name="theme-color" content="#0c0626">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://www.bolatov.com/#profile",
+      "name": "Interaction Design Portfolio of Anwar Bolat",
+      "url": "https://www.bolatov.com/",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://www.bolatov.com/#anwar-bolat",
+        "name": "Anwar Bolat",
+        "url": "https://www.bolatov.com/",
+        "jobTitle": "Senior UX Designer",
+        "description": "Interaction designer based in the UK with MSc HCI and NN/g UX Certification",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Sage"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "MSc HCI"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "NN/g UX Certified"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/anwarbolat/",
+          "https://dribbble.com/anwarbolat",
+          "https://medium.com/@anwarbolat"
+        ],
+        "email": "anwar@bolatov.com",
+        "image": "https://www.bolatov.com/assets/images/6a32485a-bolat-logo.svg"
+      }
+    }
+    </script>
     <script src="./assets/site.js" defer>
     </script>
   </head>
@@ -49,14 +89,23 @@
       <main class="main" id="main-content">
         <section id="hero" class="hero-wrapper">
           <div class="hero">
-            <h1 class="hero-heading">
-              <span class="orchid">Anwar Bolat</span>
-              <br>Interaction Designer</h1>
-            <p class="hero-credentials">MSc HCI · NN/g UX Certified</p>
+            <div class="hero-text">
+              <h1 class="hero-heading orchid">Anwar Bolat<span class="sr-only"> — Interaction Designer, MSc HCI, NN/g UX Certified</span></h1>
+              <div class="hero-animation-wrap" aria-hidden="true">
+                <div class="hero-animated">
+                  <div class="hero-heading">Interaction Designer</div>
+                  <div class="hero-heading">MSc HCI</div>
+                  <div class="hero-heading">NN/g UX Certified</div>
+                  <div class="hero-heading">Interaction Designer</div>
+                </div>
+              </div>
+              <p class="hero-credentials">MSc HCI · NN/g UX Certified</p>
+            </div>
           </div>
-          <div class="hero-sphere" aria-hidden="true">
-            <canvas width="600" height="600">
-            </canvas>
+          <div class="hero-shpere-wrapper" aria-hidden="true">
+            <div class="sphere-wrapper">
+              <div class="sphere"></div>
+            </div>
           </div>
         </section>
         <section id="work" class="work-cards-wrap">
@@ -124,5 +173,22 @@
         </div>
       </div>
     </footer>
+    <div class="cursors" hidden aria-hidden="true">
+      <div><p></p></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </body>
 </html>
