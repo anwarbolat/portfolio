@@ -1,4 +1,4 @@
-@font-face { font-family: Inter; src: url("fonts/inter-variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Google Sans"; src: url("fonts/google-sans-variable.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
 /* Portfolio styles. */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -28,9 +28,9 @@ body {
   background-color: var(--midnight-blue);
   color: var(--white-text);
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -110,7 +110,7 @@ blockquote {
   border-left-style: none;
   margin-bottom: 0;
   padding: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-size: 1.5rem;
   line-height: 1.625;
 }
@@ -218,9 +218,9 @@ blockquote {
   background-repeat: no-repeat;
   background-size: 32px;
   padding-left: 48px;
-  font-family: Inter, sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.65;
 }
 
@@ -228,9 +228,9 @@ blockquote {
   color: var(--white-text);
   background-image: url("images/1b5ee52a-quote-icon.svg");
   background-size: 32px;
-  font-family: Inter, sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   display: block;
 }
@@ -262,7 +262,7 @@ blockquote {
   margin-top: 8px;
   margin-left: 16px;
   font-size: .9rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .quote_wrapper {
@@ -301,7 +301,7 @@ blockquote {
 .button-text {
   cursor: pointer;
   margin-right: 8px;
-  font-weight: 300;
+  font-weight: 400;
   display: inline-block;
 }
 
@@ -492,7 +492,7 @@ blockquote {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 4rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .hero-heading.orchid {
@@ -589,7 +589,7 @@ blockquote {
 
 .next-project-text {
   margin-bottom: 24px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 }
 

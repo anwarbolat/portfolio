@@ -12,7 +12,7 @@ https://www.bolatov.com/
 - `assets/site.css` — Shared styles
 - `assets/site.js` — Animations, cursor effects and automatic year
 - `assets/images/` — Images and icons
-- `assets/fonts/` — Inter typeface and license
+- `assets/fonts/` — Google Sans typeface and license
 - `CNAME` — Custom domain
 
 ## Local preview
@@ -36,4 +36,4 @@ Push changes to `main` to deploy through GitHub Pages. Keep the `CNAME` file for
 
 ## Font license
 
-Inter is licensed under the SIL Open Font License. See `assets/fonts/OFL.txt`.
+Google Sans is licensed under the SIL Open Font License. See `assets/fonts/OFL.txt`.
