@@ -927,6 +927,7 @@ h1 {
 a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .nav-link { transition: color 160ms ease; min-height: 48px; }
 .nav-link:hover, .nav-link[aria-current="page"] { color: var(--orchid); }
+.top-navbar { position: relative; z-index: 1; }
 .hero-wrapper { isolation: isolate; }
 .hero { z-index: 1; }
 .hero-heading { line-height: 1.2; }
@@ -982,7 +983,7 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
   54%, 76% { transform: translateY(-50%); }
   81%, 100% { transform: translateY(-75%); }
 }
-.hero-shpere-wrapper { position: absolute; inset: auto 0 0 auto; z-index: -1; display: flex; align-items: center; justify-content: center; width: 600px; max-width: 100%; height: 280px; pointer-events: none; }
+.hero-shpere-wrapper { position: absolute; inset: auto 0 0 auto; z-index: -100; display: flex; align-items: center; justify-content: center; width: 600px; max-width: 100%; height: 280px; pointer-events: none; }
 .sphere-wrapper { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; perspective: 400px; }
 .sphere { position: relative; width: 280px; height: 280px; flex-shrink: 0; transform-style: preserve-3d; transform: rotate3d(1, 1, 1, 35deg); }
 .motion-ready .sphere { animation: rotate3d 72s linear infinite; }
