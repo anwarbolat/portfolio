@@ -95,13 +95,6 @@
     messageHeight = image ? message.offsetHeight : 0;
   }
   function placeMessage() {
-    const left = aimX > innerWidth / 2;
-    cursor.classList.toggle('label-left', left);
-    if (hoveredImage) {
-      const room = (left ? aimX : innerWidth - aimX) - 56;
-      message.style.width = `${Math.min(400, Math.max(1, room))}px`;
-      messageHeight = message.offsetHeight;
-    }
     cursor.classList.toggle('label-above', aimY + messageHeight + 20 > innerHeight);
   }
   document.addEventListener('pointermove', event => {

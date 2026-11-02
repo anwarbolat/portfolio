@@ -1000,7 +1000,6 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
 .cursors > div { position: absolute; top: 0; left: 0; width: 24px; height: 24px; border-radius: 50%; background: hsl(309 69% 60% / .3); transform: translate(-50%, -50%); will-change: transform; }
 .cursors p { position: absolute; top: -8px; left: 40px; width: min(400px, calc(100vw - 56px)); margin: 0; font-size: 32px; font-weight: 500; line-height: 1.2; color: #fff; opacity: 0; transition: opacity .5s; }
 .cursors p.visible { opacity: 1; }
-.cursors.label-left p { left: auto; right: 40px; }
 .cursors.label-above p { top: auto; bottom: 24px; }
 .has-cursor-trail .work-card:hover:not(:focus-visible) .work-card-label { opacity: 0; }
 @media (hover: hover) and (pointer: fine) {
