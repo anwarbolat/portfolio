@@ -325,6 +325,13 @@ blockquote {
 .chevron {
   width: 24px;
   display: inline-block;
+  transform: translateX(0);
+  transition: transform .15s ease-in;
+}
+
+.button:hover .chevron {
+  transform: translateX(8px);
+  transition-timing-function: ease-out;
 }
 
 .next-project-content {
