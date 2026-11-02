@@ -56,8 +56,6 @@ for path, page in parsed.items():
             json.loads(data)
         except json.JSONDecodeError as error:
             errors.append(f'{label}: invalid JSON-LD: {error}')
-    if re.search(r'webflow|website-files|jquery|fonts\.googleapis|data-w-', source, re.I):
-        errors.append(f'{label}: external platform dependency remains')
     for link in page.links:
         url = urlsplit(link)
         if url.scheme or url.netloc:

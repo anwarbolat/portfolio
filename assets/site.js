@@ -9,7 +9,7 @@
   const sphere = hero?.querySelector('.sphere');
 
   if (sphere) {
-    // The original twelve planes, each with thirty-six staggered dots.
+    // Twelve planes, each with thirty-six staggered dots.
     const fragment = document.createDocumentFragment();
     for (let planeIndex = 1; planeIndex <= 12; planeIndex++) {
       const plane = document.createElement('div');
