@@ -780,6 +780,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+.about-column {
+    flex-direction: column;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -962,7 +966,6 @@ a:focus-visible { outline: 3px solid var(--orchid); outline-offset: 5px; }
   .copyright-wrap { align-items: center; flex-wrap: wrap; }
 }
 @media (max-width: 479px) {
-  .about-column { flex-direction: column; }
   .navbar { flex-direction: row; gap: 12px; }
   .nav-logo { width: 52px; flex-shrink: 0; }
   .nav-link { padding-inline: 10px; font-size: .9375rem; }
