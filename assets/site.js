@@ -1,7 +1,11 @@
 /* Progressive enhancement: content and navigation work without JavaScript. */
 (() => {
+  const currentYear = new Date().getFullYear();
   document.querySelectorAll('[data-year]').forEach(el => {
-    el.textContent = new Date().getFullYear();
+    el.textContent = currentYear;
+  });
+  document.querySelectorAll('[data-experience-start]').forEach(el => {
+    el.textContent = currentYear - Number(el.dataset.experienceStart);
   });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
